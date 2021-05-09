@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="overlay" onclick="off()">
+        <div id="text">
+            Rules Of The Game:
+            <ol>
+                <li>Paper Covers rock</li>
+                <li>Rock breaks Scissors</li>
+                <li>Scissors Cut Paper</li>
+            </ol>
+            
+        </div>
+    </div>
+
+    <!-- Heading -->
+    <h1>ROCK <span><i class="fas fa-hand-rock"></i></span> PAPER <span><i class="fas fa-paper-plane"></i></span> SCISSORS <span><i class="fas fa-cut"></i></span></h1>
+    <!-- <input type='number' placeholder="Playing to..."> -->
+    <!-- <i class="fas fa-info-circle"></i> -->
+
+    <!-- Player Profiles -->
+    <div class="container">
+        <div id="player-profile">
+            <div id="player-image"></div>
+            <div id="player-name">
+                <h2>Nile</h2>
+            </div>
+        </div>
+
+        <input type='number' placeholder="Playing to...">
+
+        <div id="computer-profile">
+            <div id="computer-image"></div>
+            <div id="computer-name">
+                <h2>Computer</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gaming Area -->
+    <div class="game-container">
+        <div class="playerButtons">
+            <div class="player user" id="playerRock" onclick="select('rock')">
+                <i class="far fa-hand-rock fa-3x "  ></i>
+            </div>
+            <div class="player user" id='playerPaper' onclick="select('paper')">
+                <i class="far fa-hand-paper fa-3x "  ></i>
+            </div>
+            <div class="player user" id="playerScissors" onclick="select('scissors')">
+                <i class="far fa-hand-scissors fa-3x "  ></i>
+            </div>
+        </div>
+
+        <div class="score">
+            <div class="result-container">
+                <h3 class="result-text" id="resultText">It's Time For a Game!!!</h3>
+            </div>
+            <div id="user-lable" class="badge">user</div>
+            <div id="computer-lable" class="badge">Comp</div>
+            <div id='numbers'>
+                <span id="user-score">0</span> : <span id="computer-score">0</span>
+            </div>
+            <!-- Reset Icon -->
+        <i class="fas fa-sync-alt fa-xs reset-icon" title="Reset" onclick="resetAll()"></i>
+
+        <!-- Game Rules -->
+        <i class='fas fa-info-circle fa-xs info' onclick="on()"></i>
+        </div>
+
+        <div class="computerButtons">
+            <div class="player user" id="computerRock">
+                <i class="far fa-hand-rock fa-3x " ></i>
+            </div>
+            <div class="player user" id="computerPaper">
+                <i class="far fa-hand-paper fa-3x " ></i>
+            </div>
+            <div class="player user" id="computerScissors">
+                <i class="far fa-hand-scissors fa-3x " ></i>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <audio autoplay loop controls >
+        <source src="audio.mp3">
+    </audio>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  max-width: 65%;
+  margin-left: 18%;
+  font-family: Gorditas, sans-serif;
+  text-align: center;
+  word-spacing: 15px;
+  font-size: 50px;
+  color: rgba(235, 235, 23, 0.856);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
+/* Input styling */
+
+input {
+  border-radius: 5px;
+  border-style: none;
+  padding: 5px;
+  box-shadow: 0 3px rgba(5, 5, 5, 0.349);
+  font-family: "Patrick Hand", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 170px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.911);
+  outline: none;
+  font-size: 20px;
+}
+
+/* Players Profiles styling */
+
+#player-image,
+#computer-image {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+
+#player-profile,
+#computer-profile {
+  display: flex;
+  align-items: center;
+}
+
+#player-name,
+#computer-name {
+  font-family: Gorditas, sans-serif;
+  text-transform: uppercase;
+  color: rgb(253, 247, 247);
+}
+
+/* Main Game Container */
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Buttons styling */
+.playerButtons,
+.computerButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.player {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px rgba(131, 6, 6, 0.575);
+}
+
+/* Player Buttons animation */
+.playerButtons .player:hover {
+  background-color: red;
+  opacity: 1;
+  transition: 0.5s;
+  box-shadow: 0 3px rgba(131, 6, 6, 0.575);
+  top: 3px;
+}
+
+.far:hover {
+  color: rgba(231, 224, 224, 0.966);
+}
+
+.playerButtons .player:active {
+  box-shadow: 0 0 rgba(131, 6, 6, 0.575);
+  top: 9px;
+}
+
+/* Score Board styling */
+
+.score {
+  width: 400px;
+  height: 250px;
+  border: 3px solid white;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Patrick Hand", sans-serif;
+  font-size: 45px;
+  position: relative;
+}
+
+.badge {
+  background: red;
+  color: white;
+  text-transform: uppercase;
+}
+
+#user-lable {
+  position: absolute;
+  top: 40%;
+  left: -50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+#computer-lable {
+  position: absolute;
+  top: 40%;
+  right: -69px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#numbers {
+  position: absolute;
+  top: 40%;
+  left: 37%;
+}
+
+/* Score board animations */
+#user-lable:hover {
+  transform: translateY(-20px);
+  transition: ease 0.5s;
+}
+
+#computer-lable:hover {
+  transform: translateY(-20px);
+  transition: ease 0.5s;
+}
+
+.reset-icon {
+  position: absolute;
+  top: 106%;
+  left: 35%;
+  margin-right: 20px;
+  color: black;
+  background: rgba(235, 235, 23);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.info {
+  position: absolute;
+  top: 106%;
+  left: 55%;
+  color: black;
+  background: rgba(235, 235, 23);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+/* Rules overlay */
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.897);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.selected {
+  background-color: green;
+  box-shadow: 0 6px rgba(3, 100, 24, 0.527);
+  opacity: 0.6;
+}
+
+.result-text {
+  position: absolute;
+  top: -15%;
+  left: 28%;
+}
+
+.winner {
+  color: green;
+}
+
+/* Media Queries */
+
+@media (max-width: 1165px) {
+  h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1105px) {
+  h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 1015px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 946px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 880px) {
+  h1 {
+    font-size: 22px;
+  }
+  .score {
+    width: 300px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 4px;
+    text-align: center;
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 30px;
+    position: relative;
+  }
+  #user-lable {
+    position: absolute;
+    top: 40%;
+    left: -35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  #computer-lable {
+    position: absolute;
+    top: 40%;
+    right: -40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #numbers {
+    position: absolute;
+    top: 40%;
+    left: 38%;
+  }
+  .result-text {
+    font-size: 30px;
+    position: absolute;
+    top: -15%;
+    left: 30%;
+  }
+
+  #player-image,
+  #computer-image {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 50%;
+    margin-right: 25px;
+  }
+
+  #player-name,
+  #computer-name {
+    font-family: Gorditas, sans-serif;
+    text-transform: uppercase;
+    color: rgb(253, 247, 247);
+    font-size: 15px;
+  }
+
+  .player {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 648px) {
+  h1 {
+    font-size: 17px;
+  }
+
+  .score {
+    width: 200px;
+    height: 200px;
+    font-size: 27px;
+    position: relative;
+  }
+  #user-lable {
+    position: absolute;
+    top: 40%;
+    left: -35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  #computer-lable {
+    position: absolute;
+    top: 40%;
+    right: -40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  #numbers {
+    position: absolute;
+    top: 40%;
+    left: 38%;
+  }
+  .result-text {
+    font-size: 28px;
+    position: absolute;
+    top: -8%;
+    left: 28%;
+  }
+
+  #player-image,
+  #computer-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  #player-name,
+  #computer-name {
+    font-size: 13px;
+  }
+
+  .player {
+    width: 69px;
+    height: 69px;
+  }
+}
+
+@media (max-width: 528px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  .score {
+    width: 250px;
+    height: 150px;
+    font-size: 24px;
+    position: relative;
+  }
+  #user-lable {
+    position: absolute;
+    top: 40%;
+    left: -35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  #computer-lable {
+    position: absolute;
+    top: 40%;
+    right: -40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  #numbers {
+    position: absolute;
+    top: 40%;
+    left: 38%;
+  }
+  .result-text {
+    font-size: 28px;
+    position: absolute;
+    top: -8%;
+    left: 29%;
+  }
+
+  #player-image,
+  #computer-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  #player-name,
+  #computer-name {
+    font-size: 13px;
+  }
+
+  .player {
+    width: 60px;
+    height: 60px;
+    margin-right: 25px;
+  }
+  .playerButtons i,
+  .computerButtons i {
+    font-size: 2em !important;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .playerButtons,
+  .computerButtons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .computerButtons {
+    margin-top: 20px;
+  }
+}
